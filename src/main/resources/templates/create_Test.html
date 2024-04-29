@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #333333;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 100px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 64px;
+            color: #dddddd;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        form {
+            background-color: #dddddd;
+            padding: 80px;
+            border-radius: 40px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+            position: relative;
+            display: flex; /* Add flex display */
+            flex-direction: column; /* Align items vertically */
+            align-items: flex-start; /* Align items to the start (left) */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 40px;
+            font-size: 36px;
+            width: 100%; /* Set label width to full */
+        }
+
+        input[type="text"] {
+            width: calc(100% - 60px);
+            padding: 30px;
+            font-size: 32px;
+            border-radius: 24px;
+            border: 2px solid #ccc;
+        }
+
+        button[type="submit"], button[type="button"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 40px 60px;
+            border: none;
+            border-radius: 24px;
+            cursor: pointer;
+            font-size: 36px;
+            width: 45%;
+            display: inline-block;
+            margin-top: 60px;
+        }
+
+        button[type="submit"]:hover, button[type="button"]:hover {
+            background-color: #45a049;
+        }
+
+        .back-button {
+            position: absolute;
+            right: 0; /* Align to the right */
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Test yaratish</h1>
+    <form action="create" method="post">
+        <label>Savolni kiriting:
+            <input type="text"  name="answer">
+        </label>
+        <label>1-javobni kiriting:
+            <input type="text"  name="question1">
+        </label>
+        <label>2-javobni kiriting:
+            <input type="text"  name="question2">
+        </label>
+        <label>3-togri javobni kiriting:
+            <input type="text"  name="trueQuestion">
+        </label>
+        <button type="submit">Yaratish</button>
+    </form>
+    <form action="Answer" method="get">
+      <button type="submit">Ortga</button>
+    </form>
+</div>
+</body>
+</html>

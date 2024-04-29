@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 30px;
+            text-align: left;
+            border-bottom: 2px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        button[type="submit"], button[type="button"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 40px 60px;
+            border: none;
+            border-radius: 24px;
+            cursor: pointer;
+            font-size: 36px;
+            width: 100%;
+            display: block;
+            margin-top: 60px;
+        }
+
+        td {
+            font-size: 40px;
+        }
+        button[type="submit"]:hover, button[type="button"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Xato javoblar savol sharti bilan birga:</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Xato javob</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="lists, listsStat : ${list}">
+            <td th:text="${listsStat.count + 1}"></td>
+            <td th:text="${lists}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <h1 th:text="${'Umumiy aniq javoblaringiz soni:'+count}"></h1>
+    <button type="button" onclick="history.back()">Ortga</button>
+
+</div>
+</body>
+</html>

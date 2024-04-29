@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <title>Answers</title>
+    <link rel="stylesheet" >
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('https://freedomtoteach.collins.co.uk/wp-content/uploads/sites/87/2023/03/shutterstock_397626016-1-scaled.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .answer-list {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        .question {
+            margin-bottom: 30px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 30px;
+            margin: 20px 0;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 24px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        input[type="radio"] {
+            transform: scale(2);
+            margin-right: 20px;
+        }
+
+        label {
+            font-size: 32px;
+        }
+
+        .question input[type="radio"] {
+            margin: 0;
+        }
+
+
+        .question input[type="radio"]+label {
+            font-size: 24px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+        <div class="answer-list" th:each="answer:${answerList}">
+            <h1 th:text="${answerStat.count+'-savol: '+answer.getMust()}"></h1>
+            <form th:action="@{/delete/{id}(id=${answer.getId()})}" method="post">
+              <button type="submit" >Ochirish</button>
+            </form>
+        </div>
+<form action="Answer" method="get" class="form-container">
+    <button type="submit" >Ortga</button>
+</form>
+</div>
+
+</body>
+</html>
